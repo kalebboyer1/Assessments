@@ -71,13 +71,9 @@ console.log(totalAcres)
 */
 
 // CODE HERE
-averageDailyAcres = 0 
-    //got stuck and tried a for function and then if.
-if(totalAcres % 7 === averageDailyAcres)
-
-
+totalAcres = 63
+let averageDailyAcres = totalAcres/7
 console.log(averageDailyAcres)
-
 
 
 // PROBLEM 3
@@ -113,11 +109,9 @@ let acresLeft = 174
 let days = 0
 
 // CODE HERE
-//couldnt finish the function or was confused on how to subtract from the daily average.
 while(acresLeft > 0){
-    if(acresLeft 
-    acresLeft --
     days ++
+    acresLeft -= averageDailyAcres
 }
 console.log(days)
 
@@ -146,10 +140,17 @@ console.log(days)
 */
 
 // CODE HERE
+let fujiTons = fujiAcres.slice()
+let galaTons = galaAcres.slice()
+let pinkTons = pinkAcres.slice()
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+for(i = 0; i < 7; i++){
+fujiTons[i] = fujiTons[i] * 6.5
+galaTons[i] = galaTons[i] * 6.5
+pinkTons[i] = pinkTons[i] * 6.5
+}
+console.log(fujiTons,galaTons,pinkTons)
+
 
 
 
@@ -173,10 +174,17 @@ console.log(days)
 */
 
 // CODE HERE 
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+for(i=0; i<7; i++){
+fujiPounds += fujiTons[i] *2000
+galaPounds += galaTons[i] *2000
+pinkPounds += pinkTons[i] *2000
+}
+console.log(fujiPounds, galaPounds, pinkPounds)
+
 
 
 
@@ -200,10 +208,10 @@ console.log(days)
 */
 
 // CODE HERE
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
 
 
 
@@ -221,3 +229,5 @@ console.log(days)
 */
 
 // CODE HERE
+let totalProfit = galaProfit + pinkProfit + fujiProfit
+    console.log(totalProfit)

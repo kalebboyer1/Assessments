@@ -54,6 +54,7 @@ var gitStatusDefinition = "git status displays the state of the working director
 
 //CODE HERE
 var gitAddDefinition = "the git add command adds a change in the working directory to the staging area. It tells git that you want to include updates to a particular file in the next commit."
+var gitAddCode = "git add . "
 //////////////////PROBLEM 7////////////////////
 /*
     Create a variable called 'gitCommitDefinition'.  
@@ -65,7 +66,7 @@ var gitAddDefinition = "the git add command adds a change in the working directo
 
 //CODE HERE
 var gitCommitDefinition = "git commit makes a snapshot of all changes in the working directory. This only includes modifications to tracked files."
-
+var gitCommitCode = "git commit -m (your commit message here)"
 //////////////////PROBLEM 8////////////////////
 /*
     Create a variable called 'gitPushDefinition'.  
