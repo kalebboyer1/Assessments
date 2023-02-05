@@ -30,22 +30,21 @@
 */
 
 //CODE HERE
-// let status = queued
-class ticket {
+
+class Ticket {
     constructor(items,orderTime,customerId){
         this.items = items
         this.orderTime = orderTime
         this.customerId = customerId
+
+        this.status = 'queued';
     }
 
     updateStatus(newStatus){
-        for (i=0; i<newStatus;i++){
-        console.log(`The order for customer ${this.customerId} is now ${this.status}`)
+        console.log(`Customer ${this.customerId}'s status has been updated from ${this.status} to ${newStatus}`)
+        this.status = newStatus;
     }
-    }
-    
 }
-
 
 /*
     Create a new instance of your class.
@@ -59,7 +58,7 @@ class ticket {
 */
 
 //CODE HERE
-let firstTicket = new ticket(foodArr[pizza,bread,soda],orderTime,customer)
+let firstTicket = new Ticket(['pizza','bread','soda'], '7:03PM', 575)
 
 /*
     Call the `updateStatus` method on
@@ -68,3 +67,4 @@ let firstTicket = new ticket(foodArr[pizza,bread,soda],orderTime,customer)
 */
 
 //CODE HERE
+firstTicket.updateStatus("cooking")

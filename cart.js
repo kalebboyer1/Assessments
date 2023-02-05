@@ -34,9 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
-const summedPrice = cart.reduce((acc, curr) => acc + curr)
+const summedPrice = cart.reduce((acc, curr) => {
+    return acc + curr.price 
+},0) 
 console.log(summedPrice)
-
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,9 +55,12 @@ console.log(summedPrice)
 */
 
 //CODE HERE
-let calcFinalPrice = (cartTotal,couponValue,tax) =>{
-
+const calcFinalPrice = (cartTotal,couponValue,tax) => {
+    let taxadded = cartTotal + (cartTotal * tax)
+let finalPrice = taxadded - couponValue
+return finalPrice.toFixed(2)
 }
+console.log(calcFinalPrice(summedPrice, 10, .06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -81,7 +85,10 @@ let calcFinalPrice = (cartTotal,couponValue,tax) =>{
 
 /*
     TEXT ANSWER HERE
-
+//name -- string -- We want this property to track our customer names -- names are saved as strings
+//email -- string -- Add customers to mailing list -- needs to be a string to be stored properly
+//age -- number -- keep track of customer details -- needs to be a number
+// favortie items -- array -- array tracking the customer's top 3 food choices
 */
 
 /*
@@ -90,3 +97,9 @@ let calcFinalPrice = (cartTotal,couponValue,tax) =>{
 */
 
 //CODE HERE
+let customer = {
+    name: 'Mr. Customer',
+    email: 'customer@customers.mail',
+    age: 28,
+    favoriteFoods: ['Pizza', 'curly fries','hamburger' ]
+}

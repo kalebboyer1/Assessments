@@ -37,7 +37,7 @@ let pizza = {
     category : 'entree',
     popularity : 8,
     rating : 4.5,
-    tags : {glutenfree:'Special',inABox:'Small, Medium, Large'}
+    tags : ['Small', 'Medium', 'Large']
 }
 
 
@@ -60,8 +60,7 @@ console.log(pizza.popularity)
 */
 
 //CODE HERE
-let {tags} = pizza
-console.log(tags.inABox)
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -98,46 +97,46 @@ console.log(category)
 
 //CODE HERE
 let foodArr = [
-    hamburger = {
+    {
         name: 'double cheeseburger',
         price : 7,
         category : 'entree',
+        popularity : 8,
+        rating : 7,
+        tags : ['beefy','fast','yummy']
+    },
+    {  
+        name: 'Pepperoni Pizza',
+        price : 5,
+        category : 'Lunch',
         popularity : 9,
-        rating : 5,
-        tags : { meal:'small,medium,large', plain:'no condiments'}
-},
-    phone = {  
-            name: 'Iphone',
-            price : 800,
-            category : 'New',
-            popularity : 10,
-            rating : 6,
-            tags : { company:'apple', model:'proMax'}
+        rating : 8,
+        tags : ['greasy','cheesy']
         
-},
-    laptop = {
-        name: 'Hp',
-        price : 1000,
-        category : 'New',
-        popularity : 6,
-        rating : 60,
-        tags : { color:'silver', core:'iFive'}
-},
-    shoe = {
-        name: 'Jordan',
-        price : 250,
-        category : 'Classy',
-        popularity : 100,
-        rating : 90,
-        tags : { bball:'retro', color:'black and red'}
-},
-    xbox = {
-        name: 'seriesX',
-        price : 500,
-        category : 'basically a pc',
-        popularity : 94,
-        rating : 82,
-        tags : { fps:'120', hdmi:'three'}
+    },
+    {
+        name: 'BBQ Chicken',
+        price : 9,
+        category : 'Anytime',
+        popularity : 10,
+        rating : 9,
+        tags : ['delicious','soul filling', 'tasty']
+    },
+    {
+        name: 'Cheese Pizza',
+        price : 4,
+        category : 'Kids',
+        popularity : 7,
+        rating : 4,
+        tags : ['plain','for kids','just, okay']
+    },
+    {
+        name: 'Meat Lovers',
+        price : 11,
+        category : 'Not for the faint hearted',
+        popularity : 11,
+        rating : 11,
+        tags : ['only meat toppings','no veggies','whats not to love']
     }
 ]
 
@@ -156,8 +155,8 @@ let foodArr = [
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter((pizzaObj) => pizzaObj.tags.includes("whats not to love")) 
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -200,7 +199,17 @@ let foodArr = [
 */
 
 //CODE HERE
+const filterByProperty = (property,number,type) => {
+    let filteredArr = foodArr.filter((pizzaObj) => {
+        if(type === 'below'){
+            return pizzaObj[property] < number
+        } else {
+            return pizzaObj[property] > number
+        }
 
+    })
+    return filteredArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -210,3 +219,4 @@ let foodArr = [
 */
 
 //CODE HERE
+console.log(filterByProperty("price",10,"below"))
